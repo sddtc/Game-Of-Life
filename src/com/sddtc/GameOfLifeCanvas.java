@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 class GameOfLifeCanvas extends JPanel {
     private int[][] world;
     private int gap;
+    private int ALIVED = 1;
 
     public GameOfLifeCanvas(int[][] world, int gap) {
         this.world = world;
@@ -28,10 +29,9 @@ class GameOfLifeCanvas extends JPanel {
 
         for(int i = 0; i < world[0].length; i++) {
             for(int j = 0; j < world[0].length; j++) {
-                if(world[i][j] == 1) {
+                if(world[i][j] == ALIVED) {
+                    g.setColor(Color.ORANGE);
                     g.fillRect(i*gap, j*gap, gap,gap);
-                } else if(world[i][j] == 0) {
-                    g.drawRect(i*gap, j*gap, gap,gap);
                 }
             }
         }

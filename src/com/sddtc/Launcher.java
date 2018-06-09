@@ -20,9 +20,12 @@ public class Launcher {
 
         JFrame mainFrame = new JFrame();
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GameOfLifeCanvas sadraGraphics = new GameOfLifeCanvas(world, gap);
-        sadraGraphics.setPreferredSize((new Dimension(dimension, dimension)));
-        mainFrame.getContentPane().add(sadraGraphics);
+
+        GameOfLifeCanvas lifeCanvas = new GameOfLifeCanvas(world, gap);
+        lifeCanvas.setPreferredSize((new Dimension(dimension, dimension)));
+        lifeCanvas.setBackground(Color.BLACK);
+        mainFrame.getContentPane().add(lifeCanvas);
+
         mainFrame.pack();
         mainFrame.setVisible(true);
     }
