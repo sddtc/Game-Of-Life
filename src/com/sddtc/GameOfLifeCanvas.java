@@ -27,11 +27,11 @@ class GameOfLifeCanvas extends JPanel {
 
         this.world = new GameOfLife().start(this.world);
 
-        for(int i = 0; i < world[0].length; i++) {
+        for(int i = 0; i < world.length; i++) {
             for(int j = 0; j < world[0].length; j++) {
                 if(world[i][j] == ALIVED) {
                     g.setColor(Color.ORANGE);
-                    g.fillRect(i*gap, j*gap, gap,gap);
+                    g.fillRect(j*gap, i*gap, gap,gap);
                 }
             }
         }
